@@ -1,4 +1,5 @@
-import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_red.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/red_routes.dart';
+import 'package:bottom_navigaion_bar_demo/ui/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class RedContents01Screen extends StatelessWidget {
@@ -9,14 +10,14 @@ class RedContents01Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Red Contents01'),
+      appBar: const CustomAppBar(
+        title: Text('Red Contents01'),
         backgroundColor: Colors.red,
       ),
       body: Center(
         child: ElevatedButton(
-          onPressed: () => Navigator.of(context)
-              .pushNamed(TabNavigatorRedRoutes.contents02.routeName),
+          onPressed: () =>
+              Navigator.of(context).pushNamed(RedRoutes.contents02.routeName),
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.red,
           ),

@@ -1,4 +1,5 @@
-import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_green.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/green_routes.dart';
+import 'package:bottom_navigaion_bar_demo/ui/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class GreenContents02Screen extends StatelessWidget {
@@ -9,14 +10,14 @@ class GreenContents02Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Green Contents02'),
+      appBar: const CustomAppBar(
+        title: Text('Green Contents02'),
         backgroundColor: Colors.green,
       ),
       body: Center(
         child: ElevatedButton(
-          onPressed: () => Navigator.of(context)
-              .pushNamed(TabNavigatorGreenRoutes.contents03.routeName),
+          onPressed: () =>
+              Navigator.of(context).pushNamed(GreenRoutes.contents03.routeName),
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.green,
           ),

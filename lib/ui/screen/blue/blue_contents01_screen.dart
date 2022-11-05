@@ -1,4 +1,5 @@
-import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_blue.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/blue_routes.dart';
+import 'package:bottom_navigaion_bar_demo/ui/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class BlueContents01Screen extends StatelessWidget {
@@ -7,8 +8,8 @@ class BlueContents01Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Blue Contents01'),
+      appBar: const CustomAppBar(
+        title: Text('Blue Contents01'),
         backgroundColor: Colors.blue,
       ),
       body: Column(
@@ -18,7 +19,7 @@ class BlueContents01Screen extends StatelessWidget {
           Expanded(child: _buildList()),
           ElevatedButton(
             onPressed: () => Navigator.of(context)
-                .pushNamed(TabNavigatorBlueRoutes.contents02.routeName),
+                .pushNamed(BlueRoutes.contents02.routeName),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.blue,
             ),

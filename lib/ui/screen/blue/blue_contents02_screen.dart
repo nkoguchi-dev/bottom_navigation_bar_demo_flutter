@@ -1,3 +1,4 @@
+import 'package:bottom_navigaion_bar_demo/ui/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class BlueContents02Screen extends StatelessWidget {
@@ -12,8 +13,8 @@ class BlueContents02Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Blue Contents02'),
+      appBar: const CustomAppBar(
+        title: Text('Blue Contents02'),
         backgroundColor: Colors.blue,
       ),
       body: Column(

@@ -1,18 +1,9 @@
-import 'package:bottom_navigaion_bar_demo/ui/model/tab_item.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/blue_routes.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/tab_item.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/blue/blue_contents01_screen.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/blue/blue_contents02_screen.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/blue/blue_root_screen.dart';
 import 'package:flutter/material.dart';
-
-enum TabNavigatorBlueRoutes {
-  root('/'),
-  contents01('/contents01'),
-  contents02('/contents02'),
-  contents03('/contents03');
-
-  const TabNavigatorBlueRoutes(this.routeName);
-  final String routeName;
-}
 
 class TabNavigatorBlue extends StatelessWidget {
   const TabNavigatorBlue({
@@ -27,12 +18,9 @@ class TabNavigatorBlue extends StatelessWidget {
     BuildContext context,
   ) {
     return {
-      TabNavigatorBlueRoutes.root.routeName: (context) =>
-          const BlueRootScreen(),
-      TabNavigatorBlueRoutes.contents01.routeName: (context) =>
-          BlueContents01Screen(),
-      TabNavigatorBlueRoutes.contents02.routeName: (context) =>
-          BlueContents02Screen(),
+      BlueRoutes.root.routeName: (context) => const BlueRootScreen(),
+      BlueRoutes.contents01.routeName: (context) => BlueContents01Screen(),
+      BlueRoutes.contents02.routeName: (context) => BlueContents02Screen(),
     };
   }
 
@@ -41,7 +29,7 @@ class TabNavigatorBlue extends StatelessWidget {
     final routeBuilders = _routeBuilders(context);
     return Navigator(
       key: navigatorKey,
-      initialRoute: TabNavigatorBlueRoutes.root.routeName,
+      initialRoute: BlueRoutes.root.routeName,
       onGenerateRoute: (routeSettings) {
         return MaterialPageRoute(
           settings: routeSettings,

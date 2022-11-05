@@ -1,19 +1,10 @@
-import 'package:bottom_navigaion_bar_demo/ui/model/tab_item.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/green_routes.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/tab_item.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/green/green_contents01_screen.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/green/green_contents02_screen.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/green/green_contents03_screen.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/green/green_root_screen.dart';
 import 'package:flutter/material.dart';
-
-enum TabNavigatorGreenRoutes {
-  root('/'),
-  contents01('/contents01'),
-  contents02('/contents02'),
-  contents03('/contents03');
-
-  const TabNavigatorGreenRoutes(this.routeName);
-  final String routeName;
-}
 
 class TabNavigatorGreen extends StatelessWidget {
   const TabNavigatorGreen({
@@ -28,13 +19,12 @@ class TabNavigatorGreen extends StatelessWidget {
     BuildContext context,
   ) {
     return {
-      TabNavigatorGreenRoutes.root.routeName: (context) =>
-          const GreenRootScreen(),
-      TabNavigatorGreenRoutes.contents01.routeName: (context) =>
+      GreenRoutes.root.routeName: (context) => const GreenRootScreen(),
+      GreenRoutes.contents01.routeName: (context) =>
           const GreenContents01Screen(),
-      TabNavigatorGreenRoutes.contents02.routeName: (context) =>
+      GreenRoutes.contents02.routeName: (context) =>
           const GreenContents02Screen(),
-      TabNavigatorGreenRoutes.contents03.routeName: (context) =>
+      GreenRoutes.contents03.routeName: (context) =>
           const GreenContents03Screen(),
     };
   }
@@ -44,7 +34,7 @@ class TabNavigatorGreen extends StatelessWidget {
     final routeBuilders = _routeBuilders(context);
     return Navigator(
       key: navigatorKey,
-      initialRoute: TabNavigatorGreenRoutes.root.routeName,
+      initialRoute: GreenRoutes.root.routeName,
       onGenerateRoute: (routeSettings) {
         return MaterialPageRoute(
           settings: routeSettings,

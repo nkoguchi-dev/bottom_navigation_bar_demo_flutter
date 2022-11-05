@@ -1,4 +1,5 @@
-import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_green.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/green_routes.dart';
+import 'package:bottom_navigaion_bar_demo/ui/widget/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class GreenContents03Screen extends StatelessWidget {
@@ -9,8 +10,8 @@ class GreenContents03Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Green Contents03'),
+      appBar: const CustomAppBar(
+        title: Text('Green Contents03'),
         backgroundColor: Colors.green,
       ),
       body: Center(
@@ -20,7 +21,7 @@ class GreenContents03Screen extends StatelessWidget {
             ElevatedButton(
               onPressed: () => Navigator.of(context).popUntil(
                 ModalRoute.withName(
-                  TabNavigatorGreenRoutes.contents01.routeName,
+                  GreenRoutes.contents01.routeName,
                 ),
               ),
               style: ElevatedButton.styleFrom(

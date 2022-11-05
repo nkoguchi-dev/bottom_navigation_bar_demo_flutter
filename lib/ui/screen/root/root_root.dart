@@ -1,18 +1,18 @@
-import 'package:bottom_navigaion_bar_demo/ui/model/tab_item.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/tab_item.dart';
 import 'package:bottom_navigaion_bar_demo/ui/widget/bottom_navigation.dart';
 import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_blue.dart';
 import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_green.dart';
 import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_red.dart';
 import 'package:flutter/material.dart';
 
-class App extends StatefulWidget {
-  const App({super.key});
+class RootScreen extends StatefulWidget {
+  const RootScreen({super.key});
 
   @override
-  State<StatefulWidget> createState() => AppState();
+  State<StatefulWidget> createState() => RootScreenState();
 }
 
-class AppState extends State<App> {
+class RootScreenState extends State<RootScreen> {
   var _currentTab = TabItem.red;
   final _navigatorKeys = {
     TabItem.red: GlobalKey<NavigatorState>(),

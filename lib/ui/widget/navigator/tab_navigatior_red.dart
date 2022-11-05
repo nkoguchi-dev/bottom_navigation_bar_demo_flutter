@@ -1,17 +1,9 @@
-import 'package:bottom_navigaion_bar_demo/ui/model/tab_item.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/red_routes.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/tab_item.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/red/red_root_screen.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/red/red_contents01_screen.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/red/red_contents02_screen.dart';
 import 'package:flutter/material.dart';
-
-enum TabNavigatorRedRoutes {
-  root('/'),
-  contents01('/contents01'),
-  contents02('/contents02');
-
-  const TabNavigatorRedRoutes(this.routeName);
-  final String routeName;
-}
 
 class TabNavigatorRed extends StatelessWidget {
   const TabNavigatorRed({
@@ -26,11 +18,9 @@ class TabNavigatorRed extends StatelessWidget {
     BuildContext context,
   ) {
     return {
-      TabNavigatorRedRoutes.root.routeName: (context) => const RedRootScreen(),
-      TabNavigatorRedRoutes.contents01.routeName: (context) =>
-          const RedContents01Screen(),
-      TabNavigatorRedRoutes.contents02.routeName: (context) =>
-          const RedContents02Screen(),
+      RedRoutes.root.routeName: (context) => const RedRootScreen(),
+      RedRoutes.contents01.routeName: (context) => const RedContents01Screen(),
+      RedRoutes.contents02.routeName: (context) => const RedContents02Screen(),
     };
   }
 
@@ -39,7 +29,7 @@ class TabNavigatorRed extends StatelessWidget {
     final routeBuilders = _routeBuilders(context);
     return Navigator(
       key: navigatorKey,
-      initialRoute: TabNavigatorRedRoutes.root.routeName,
+      initialRoute: RedRoutes.root.routeName,
       onGenerateRoute: (routeSettings) {
         return MaterialPageRoute(
           builder: (context) => routeBuilders[routeSettings.name!]!(context),

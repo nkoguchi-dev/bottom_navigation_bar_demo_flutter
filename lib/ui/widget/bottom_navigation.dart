@@ -1,4 +1,4 @@
-import 'package:bottom_navigaion_bar_demo/ui/model/tab_item.dart';
+import 'package:bottom_navigaion_bar_demo/ui/enum/tab_item.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatelessWidget {
