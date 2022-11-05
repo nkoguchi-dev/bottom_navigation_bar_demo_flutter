@@ -1,6 +1,7 @@
 import 'package:bottom_navigaion_bar_demo/ui/screen/color_detail_page.dart';
 import 'package:bottom_navigaion_bar_demo/ui/screen/colors_list_page.dart';
 import 'package:bottom_navigaion_bar_demo/ui/model/tab_item.dart';
+import 'package:bottom_navigaion_bar_demo/ui/screen/red/red_root_screen.dart';
 import 'package:flutter/material.dart';
 
 class TabNavigatorRoutes {

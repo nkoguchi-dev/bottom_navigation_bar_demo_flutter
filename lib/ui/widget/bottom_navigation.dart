@@ -2,8 +2,11 @@ import 'package:bottom_navigaion_bar_demo/ui/model/tab_item.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigation extends StatelessWidget {
-  const BottomNavigation(
-      {super.key, required this.currentTab, required this.onSelectTab});
+  const BottomNavigation({
+    super.key,
+    required this.currentTab,
+    required this.onSelectTab,
+  });
   final TabItem currentTab;
   final ValueChanged<TabItem> onSelectTab;
 
