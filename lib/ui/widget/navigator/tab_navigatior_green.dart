@@ -6,7 +6,7 @@ import 'package:bottom_navigaion_bar_demo/ui/screen/green/green_root_screen.dart
 import 'package:flutter/material.dart';
 
 enum TabNavigatorGreenRoutes {
-  greenRoute('/'),
+  root('/'),
   contents01('/contents01'),
   contents02('/contents02'),
   contents03('/contents03');
@@ -28,7 +28,7 @@ class TabNavigatorGreen extends StatelessWidget {
     BuildContext context,
   ) {
     return {
-      TabNavigatorGreenRoutes.greenRoute.routeName: (context) =>
+      TabNavigatorGreenRoutes.root.routeName: (context) =>
           const GreenRootScreen(),
       TabNavigatorGreenRoutes.contents01.routeName: (context) =>
           const GreenContents01Screen(),
@@ -44,7 +44,7 @@ class TabNavigatorGreen extends StatelessWidget {
     final routeBuilders = _routeBuilders(context);
     return Navigator(
       key: navigatorKey,
-      initialRoute: TabNavigatorGreenRoutes.greenRoute.routeName,
+      initialRoute: TabNavigatorGreenRoutes.root.routeName,
       onGenerateRoute: (routeSettings) {
         return MaterialPageRoute(
           settings: routeSettings,

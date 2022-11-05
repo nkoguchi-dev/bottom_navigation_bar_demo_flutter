@@ -1,8 +1,8 @@
 import 'package:bottom_navigaion_bar_demo/ui/model/tab_item.dart';
 import 'package:bottom_navigaion_bar_demo/ui/widget/bottom_navigation.dart';
-import 'package:bottom_navigaion_bar_demo/ui/widget/tab_navigatior.dart';
-import 'package:bottom_navigaion_bar_demo/ui/widget/tab_navigatior_green.dart';
-import 'package:bottom_navigaion_bar_demo/ui/widget/tab_navigatior_red.dart';
+import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_blue.dart';
+import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_green.dart';
+import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_red.dart';
 import 'package:flutter/material.dart';
 
 class App extends StatefulWidget {
@@ -51,22 +51,12 @@ class AppState extends State<App> {
         body: Stack(children: <Widget>[
           _buildOffstageNavigatorRed(),
           _buildOffstageNavigatorGreen(),
-          _buildOffstageNavigator(TabItem.blue),
+          _buildOffstageNavigatorBlue(),
         ]),
         bottomNavigationBar: BottomNavigation(
           currentTab: _currentTab,
           onSelectTab: _selectTab,
         ),
-      ),
-    );
-  }
-
-  Widget _buildOffstageNavigator(TabItem tabItem) {
-    return Offstage(
-      offstage: _currentTab != tabItem,
-      child: TabNavigator(
-        navigatorKey: _navigatorKeys[tabItem],
-        tabItem: tabItem,
       ),
     );
   }
@@ -87,6 +77,16 @@ class AppState extends State<App> {
       child: TabNavigatorGreen(
         navigatorKey: _navigatorKeys[TabItem.green],
         tabItem: TabItem.green,
+      ),
+    );
+  }
+
+  Widget _buildOffstageNavigatorBlue() {
+    return Offstage(
+      offstage: _currentTab != TabItem.blue,
+      child: TabNavigatorBlue(
+        navigatorKey: _navigatorKeys[TabItem.blue],
+        tabItem: TabItem.blue,
       ),
     );
   }

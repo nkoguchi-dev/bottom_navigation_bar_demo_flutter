@@ -1,4 +1,4 @@
-import 'package:bottom_navigaion_bar_demo/ui/widget/tab_navigatior_green.dart';
+import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_green.dart';
 import 'package:flutter/material.dart';
 
 class GreenContents03Screen extends StatelessWidget {

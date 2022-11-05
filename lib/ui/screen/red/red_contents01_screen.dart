@@ -1,4 +1,4 @@
-import 'package:bottom_navigaion_bar_demo/ui/widget/tab_navigatior_red.dart';
+import 'package:bottom_navigaion_bar_demo/ui/widget/navigator/tab_navigatior_red.dart';
 import 'package:flutter/material.dart';
 
 class RedContents01Screen extends StatelessWidget {
